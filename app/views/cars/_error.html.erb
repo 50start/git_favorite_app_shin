@@ -1,0 +1,12 @@
+<% if car.errors.any? %> <!--もしユーザー入力にエラーがあった場合-->
+　<div class="alert.alert-danger" role="alert">
+  　<h4 class="alert-heading"><%= pluralize(car.errors.count, "error") %></h4>
+    　<P><%= pluralize(car.errors.count, "error") %>prohibited this object from being saved: not successfully</P>
+     　<hr>
+     　<p class="mb-0">
+     　<% car.errors.full_messages.each do |message| %>
+    　<li><%= message %></li>
+    　<% end %>
+    </P>
+  </div>
+<% end %>
